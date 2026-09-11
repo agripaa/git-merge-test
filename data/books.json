@@ -1,0 +1,23 @@
+[
+    {
+        "id_buku": 1,
+        "judul": "Laut Bercerita",
+        "penulis": "Leila S. Chudori",
+        "tahun": 2017,
+        "stok": 5
+    },
+    {
+        "id_buku": 2,
+        "judul": "Mariposa",
+        "penulis": "Luluk Hf",
+        "tahun": 2020,
+        "stok": 7
+    },
+    {
+        "id_buku": 3,
+        "judul": "Bumi Manusia",
+        "penulis": "Pramoedya Ananta Toer",
+        "tahun": 1980,
+        "stok": 4
+    }
+]
