@@ -1,8 +1,8 @@
-[
-    {
+[{
         "id_buku": 1,
         "judul": "Laut Bercerita",
         "penulis": "Leila S. Chudori",
+        "penerbit": "Gramedia",
         "tahun": 2017,
         "stok": 5
     },
@@ -10,6 +10,7 @@
         "id_buku": 2,
         "judul": "Mariposa",
         "penulis": "Luluk Hf",
+        "penerbit": "Gramedia",
         "tahun": 2020,
         "stok": 7
     },
@@ -17,6 +18,7 @@
         "id_buku": 3,
         "judul": "Bumi Manusia",
         "penulis": "Pramoedya Ananta Toer",
+        "penerbit": "Gramedia",
         "tahun": 1980,
         "stok": 4
     }
