@@ -130,7 +130,7 @@ func checkBook(input bookInput, requireAll bool) error {
 		{"id_buku", input.IDBuku, 1},
 		{"tahun", input.Tahun, 1},
 		{"stok", input.Stok, 0},
-		{"harga", input.Harga, 1},
+		{"harga", input.Harga, 1000},
 	} {
 		if field.value == nil {
 			if requireAll || field.name == "id_buku" {
@@ -321,10 +321,10 @@ func newHandler() http.Handler {
 
 func main() {
 	server := &http.Server{
-		Addr:              "127.0.0.1:8080",
+		Addr:              "127.0.0.1:8000",
 		Handler:           newHandler(),
 		ReadHeaderTimeout: 5 * time.Second,
 	}
-	log.Println("Server berjalan di http://localhost:8080")
+	log.Println("Server berjalan di http://localhost:8000")
 	log.Fatal(server.ListenAndServe())
 }

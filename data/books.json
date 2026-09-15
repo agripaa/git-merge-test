@@ -19,5 +19,14 @@
         "penulis": "Pramoedya Ananta Toer",
         "tahun": 1980,
         "stok": 4
+    },
+    {
+        "id_buku": 5,
+        "judul": "Laut Menangis",
+        "penulis": "Dane",
+        "tahun": 2007,
+        "stok": 10,
+        "penerbit": "Gramedia",
+        "harga": 1000
     }
 ]
