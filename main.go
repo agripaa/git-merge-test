@@ -201,6 +201,7 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 			"GET /books?penulis=<nama_penulis>",
 			"GET /books?tahun=<tahun>",
 			"GET /books?penerbit=<nama_penerbit>",
+			"GET /books?tahun=<tahun>",
 			"POST /books",
 			"PUT /books",
 			"DELETE /books",
@@ -259,13 +260,17 @@ func getBooksHandler(w http.ResponseWriter, r *http.Request, books []Book) {
 			writeMessage(w, http.StatusBadRequest, "tahun harus berupa angka positif")
 			return
 		}
+		result := []Book{}
 		for _, book := range books {
 			if book.Tahun == tahun {
-				writeResponse(w, http.StatusOK, book)
-				return
+				result = append(result, book)
 			}
 		}
-		writeMessage(w, http.StatusNotFound, "data tidak ditemukan")
+		if len(result) == 0 {
+			writeMessage(w, http.StatusNotFound, "data tidak ditemukan")
+			return
+		}
+		writeResponse(w, http.StatusOK, result)
 		return
 	}
 	writeResponse(w, http.StatusOK, books)
