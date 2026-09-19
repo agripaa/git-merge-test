@@ -130,7 +130,7 @@ func checkBook(input bookInput, requireAll bool) error {
 		{"id_buku", input.IDBuku, 1},
 		{"tahun", input.Tahun, 1},
 		{"stok", input.Stok, 0},
-		{"harga", input.Harga, 1},
+		{"harga", input.Harga, 1000},
 	} {
 		if field.value == nil {
 			if requireAll || field.name == "id_buku" {
