@@ -200,6 +200,7 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 			"GET /books?id=<id_buku>",
 			"GET /books?penulis=<nama_penulis>",
 			"GET /books?tahun=<tahun>",
+			"GET /books?penerbit=<nama_penerbit>",
 			"POST /books",
 			"PUT /books",
 			"DELETE /books",
