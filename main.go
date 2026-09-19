@@ -238,7 +238,6 @@ func getBooksHandler(w http.ResponseWriter, r *http.Request, books []Book) {
 		writeResponse(w, http.StatusOK, result)
 		return
 	}
-
 	if query.Has("penerbit") {
 		result := []Book{}
 		for _, book := range books {
@@ -337,10 +336,10 @@ func newHandler() http.Handler {
 
 func main() {
 	server := &http.Server{
-		Addr:              "127.0.0.1:8081",
+		Addr:              "127.0.0.1:8000",
 		Handler:           newHandler(),
 		ReadHeaderTimeout: 5 * time.Second,
 	}
-	log.Println("Server berjalan di http://localhost:8081")
+	log.Println("Server berjalan di http://localhost:8000")
 	log.Fatal(server.ListenAndServe())
 }
