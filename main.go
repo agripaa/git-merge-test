@@ -199,6 +199,7 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 			"GET /books",
 			"GET /books?id=<id_buku>",
 			"GET /books?penulis=<nama_penulis>",
+			"GET /books?penerbit=<nama_penerbit>",
 			"POST /books",
 			"PUT /books",
 			"DELETE /books",
@@ -227,6 +228,21 @@ func getBooksHandler(w http.ResponseWriter, r *http.Request, books []Book) {
 		result := []Book{}
 		for _, book := range books {
 			if strings.EqualFold(book.Penulis, query.Get("penulis")) {
+				result = append(result, book)
+			}
+		}
+		if len(result) == 0 {
+			writeMessage(w, http.StatusNotFound, "data tidak ditemukan")
+			return
+		}
+		writeResponse(w, http.StatusOK, result)
+		return
+	}
+
+	if query.Has("penerbit") {
+		result := []Book{}
+		for _, book := range books {
+			if strings.EqualFold(book.Penerbit, query.Get("penerbit")) {
 				result = append(result, book)
 			}
 		}
